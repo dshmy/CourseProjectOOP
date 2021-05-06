@@ -1,0 +1,192 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:Course_Project">
+    <ControlTemplate x:Key="addMaster" TargetType="Button">
+        <Border BorderBrush="#FF2B2A2A" BorderThickness="1" Height="50" Background ="#FF4D4C4C"  >
+            <ContentControl HorizontalAlignment="Center" VerticalAlignment="Center" Content="Добавить мастера" />
+        </Border>
+        <ControlTemplate.Triggers>
+            <Trigger Property="IsMouseOver" Value="true">
+                <Setter Property="FontWeight" Value="Bold"/>
+                <Setter Property="Foreground" Value="#FFA39999"/>
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+    <ControlTemplate x:Key="updatePassword" TargetType="Button">
+        <Border BorderBrush="#FF2B2A2A" BorderThickness="1" Height="50" Background ="#FF4D4C4C"  >
+            <ContentControl HorizontalAlignment="Center" VerticalAlignment="Center" Content="Изменить пароль" />
+        </Border>
+        <ControlTemplate.Triggers>
+            <Trigger Property="IsMouseOver" Value="true">
+                <Setter Property="FontWeight" Value="Bold"/>
+                <Setter Property="Foreground" Value="#FFA39999"/>
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+    <ControlTemplate x:Key="changeAkk" TargetType="Button">
+        <Border BorderBrush="#FF2B2A2A" BorderThickness="1" Height="50" Background ="#FF4D4C4C"  >
+            <ContentControl HorizontalAlignment="Center" VerticalAlignment="Center" Content="Сменить аккаунт" />
+        </Border>
+        <ControlTemplate.Triggers>
+            <Trigger Property="IsMouseOver" Value="true">
+                <Setter Property="FontWeight" Value="Bold"/>
+                <Setter Property="Foreground" Value="#FFA39999"/>
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+    <ControlTemplate x:Key="Exit" TargetType="Button">
+        <Border BorderBrush="#FF2B2A2A" BorderThickness="1" Height="50" Background ="#FF4D4C4C"  >
+            <ContentControl HorizontalAlignment="Center" VerticalAlignment="Center" Content="Выход" />
+        </Border>
+        <ControlTemplate.Triggers>
+            <Trigger Property="IsMouseOver" Value="true">
+                <Setter Property="FontWeight" Value="Bold"/>
+                <Setter Property="Foreground" Value="#FFA39999"/>
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="login" TargetType="Button">
+        <Border BorderBrush="White" BorderThickness="1" Height="40" Width="160" Background ="#FF4D4C4C"  >
+            <ContentControl HorizontalAlignment="Center" VerticalAlignment="Center" Content="Войти" />
+        </Border>
+        <ControlTemplate.Triggers>
+            <Trigger Property="IsMouseOver" Value="true">
+                <Setter Property="FontWeight" Value="Bold"/>
+                <Setter Property="Foreground" Value="#FFA39999"/>
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+    <ControlTemplate x:Key="registr" TargetType="Button">
+        <Border BorderBrush="White" BorderThickness="1" Height="40" Width="160" Background ="#FF4D4C4C"  >
+            <ContentControl HorizontalAlignment="Center" VerticalAlignment="Center" Content="Регистрация" />
+        </Border>
+        <ControlTemplate.Triggers>
+            <Trigger Property="IsMouseOver" Value="true">
+                <Setter Property="FontWeight" Value="Bold"/>
+                <Setter Property="Foreground" Value="#FFA39999"/>
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+    <ControlTemplate x:Key="ExitAutoriz" TargetType="Button">
+        <Border BorderBrush="White" BorderThickness="1" Height="40" Width="160" Background ="#FF4D4C4C"  >
+            <ContentControl HorizontalAlignment="Center" VerticalAlignment="Center" Content="Выход" />
+        </Border>
+        <ControlTemplate.Triggers>
+            <Trigger Property="IsMouseOver" Value="true">
+                <Setter Property="FontWeight" Value="Bold"/>
+                <Setter Property="Foreground" Value="#FFA39999"/>
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="Registration" TargetType="Button">
+        <Border BorderBrush="White" BorderThickness="1"  Height="35" Width="160" Background ="#FF4D4C4C"  >
+            <ContentControl HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" Content="Зарегистрироваться" />
+        </Border>
+        <ControlTemplate.Triggers>
+            <Trigger Property="IsMouseOver" Value="true">
+                <Setter Property="FontWeight" Value="Bold"/>
+                <Setter Property="Foreground" Value="#FFA39999"/>
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="NewOrder" TargetType="Button">
+        <Border BorderBrush="#FF2B2A2A" BorderThickness="1" Height="50" Background ="#FF4D4C4C"  >
+            <ContentControl HorizontalAlignment="Center" VerticalAlignment="Center" Content="Новый заказ" />
+        </Border>
+        <ControlTemplate.Triggers>
+            <Trigger Property="IsMouseOver" Value="true">
+                <Setter Property="FontWeight" Value="Bold"/>
+                <Setter Property="Foreground" Value="#FFA39999"/>
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="right" TargetType="Button">
+        <Border  Height="50" Width="50" >
+            <Border.Background>
+                <ImageBrush ImageSource="Images/next.png"/>
+            </Border.Background>
+        </Border>
+    </ControlTemplate>
+    <ControlTemplate x:Key="left" TargetType="Button">
+        <Border  Height="50" Width="50" >
+            <Border.Background>
+                <ImageBrush ImageSource="Images/back (3).png"/>
+            </Border.Background>
+        </Border>
+    </ControlTemplate>
+    <ControlTemplate x:Key="ChangePassword" TargetType="Button">
+        <Border BorderBrush="White" BorderThickness="1" Height="35" Width="150" Background ="#FF4D4C4C"  >
+            <ContentControl HorizontalAlignment="Center" Foreground="White" VerticalAlignment="Center" Content="Изменить" />
+        </Border>
+        <ControlTemplate.Triggers>
+            <Trigger Property="IsMouseOver" Value="true">
+                <Setter Property="FontWeight" Value="Bold"/>
+                <Setter Property="Foreground" Value="#FFA39999"/>
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="sendToReady" TargetType="Button">
+        <Border BorderBrush="#FF2B2A2A" BorderThickness="1" Height="50" Background ="#FF4D4C4C"  >
+            <ContentControl HorizontalAlignment="Center" VerticalAlignment="Center" Content="Отправить в готовые" />
+        </Border>
+        <ControlTemplate.Triggers>
+            <Trigger Property="IsMouseOver" Value="true">
+                <Setter Property="FontWeight" Value="Bold"/>
+                <Setter Property="Foreground" Value="#FFA39999"/>
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+    <ControlTemplate x:Key="takeOrder" TargetType="Button">
+        <Border BorderBrush="#FF2B2A2A" BorderThickness="1" Height="50" Background ="#FF4D4C4C"  >
+            <ContentControl HorizontalAlignment="Center" VerticalAlignment="Center" Content="Принять заказ" />
+        </Border>
+        <ControlTemplate.Triggers>
+            <Trigger Property="IsMouseOver" Value="true">
+                <Setter Property="FontWeight" Value="Bold"/>
+                <Setter Property="Foreground" Value="#FFA39999"/>
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="Photo" TargetType="Button">
+        <Border BorderBrush="White" BorderThickness="1" Height="30" Width="152" Background ="#FF4D4C4C"  >
+            <ContentControl HorizontalAlignment="Center" VerticalAlignment="Center" Content="Прикрепить фото" />
+        </Border>
+        <ControlTemplate.Triggers>
+            <Trigger Property="IsMouseOver" Value="true">
+                <Setter Property="FontWeight" Value="Bold"/>
+                <Setter Property="Foreground" Value="#FFA39999"/>
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+
+
+    <ControlTemplate x:Key="sendZayavka" TargetType="Button">
+        <Border BorderBrush="White" BorderThickness="1" Height="30" Width="152" Background ="#FF4D4C4C"  >
+            <ContentControl HorizontalAlignment="Center" VerticalAlignment="Center" Content="Отправить заявку" />
+        </Border>
+        <ControlTemplate.Triggers>
+            <Trigger Property="IsMouseOver" Value="true">
+                <Setter Property="FontWeight" Value="Bold"/>
+                <Setter Property="Foreground" Value="#FFA39999"/>
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="prinatZakaz" TargetType="Button">
+        <Border BorderBrush="White" BorderThickness="1"  Background ="#FF4D4C4C"  >
+            <ContentControl HorizontalAlignment="Center" VerticalAlignment="Center" Content="Принять заказ" />
+        </Border>
+        <ControlTemplate.Triggers>
+            <Trigger Property="IsMouseOver" Value="true">
+                <Setter Property="FontWeight" Value="Bold"/>
+                <Setter Property="Foreground" Value="#FFA39999"/>
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+</ResourceDictionary>

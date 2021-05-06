@@ -1,0 +1,147 @@
+﻿<Window x:Class="Course_Project.MasterWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Course_Project"
+        mc:Ignorable="d"
+        x:Name="masterWnd"
+        Title="MasterWindow" Height="650" Width="1400" WindowStyle="SingleBorderWindow" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded"  SizeChanged="MasterWindow_OnSizeChanged" MinWidth="1400" MinHeight="293">
+    <Window.Background>
+        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="#FFD12222" Offset="0"/>
+            <GradientStop Color="#FF4D0909" Offset="1"/>
+        </LinearGradientBrush>
+    </Window.Background>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="250"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Label x:Name="masterName" Content="" Grid.Column="0" FontSize="30" HorizontalAlignment="Left" Margin="50 0 0 0"/>
+        <StackPanel Grid.Column="0">
+            <Image Source="Images/master.png" Width="65" Height="65" HorizontalAlignment="Left" Margin="0 -7 0 -4"/>
+            <Button x:Name="editPassword" Foreground="White" FontSize="15" FontFamily="Helvetica"  Margin="0 0 0 0" Click="editPassword_Click" Template="{DynamicResource updatePassword}" />
+            <Button x:Name="leaveAccount"  FontSize="15" FontFamily="Helvetica" Foreground="White"  Click="leaveAccount_Click" Template="{DynamicResource changeAkk}"/>
+            <Button x:Name="readyButt"  FontSize="15" FontFamily="Helvetica"  Click="readyButt_Click" Foreground="White" Template="{DynamicResource sendToReady}"/>
+            <Button x:Name="pickOrderButt" Foreground="White"  FontSize="15" FontFamily="Helvetica" Click="pickOrderButt_Click" Template="{DynamicResource takeOrder}"/>
+        </StackPanel>
+        <Button x:Name="exit" Foreground="White"  FontSize="15" FontFamily="Helvetica"  VerticalAlignment="Bottom" Click="Button_Click" Template="{DynamicResource Exit}"/>
+        <TabControl Grid.Column="1" VerticalAlignment="Top"  >
+            <TabItem Header="Принятые заказы" FontSize="15" FontFamily="Helvetica" MouseLeftButtonUp="TabItem_MouseLeftButtonUp" Background="#FF8B8484" >
+                <TabItem.Content>
+                    
+                    <DataGrid x:Name="acceptedOrders" IsReadOnly="True" AutoGenerateColumns="False" HeadersVisibility="Column" CanUserResizeColumns="False"
+        CanUserResizeRows="False" CanUserReorderColumns="False" Height="1500" VerticalScrollBarVisibility="Visible">
+                        <DataGrid.Resources>
+                            <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
+                                <Setter Property="Background" Value="#FF2C2828" />
+                                <Setter Property="Foreground" Value="White" />
+                                <Setter Property="BorderThickness" Value="1" />
+                                <Setter Property="BorderBrush" Value="Black" />
+                            </Style>
+                        </DataGrid.Resources>
+                        <DataGrid.Background>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FF767171" Offset="0"/>
+                                <GradientStop Color="#FFBD9B84" Offset="1"/>
+                            </LinearGradientBrush>
+                        </DataGrid.Background>
+
+                        <DataGrid.ContextMenu>
+                            <ContextMenu>
+                                <MenuItem x:Name="moreAccepted" Header="Подробнее" Click="moreAccepted_Click"/>
+                            </ContextMenu>
+                        </DataGrid.ContextMenu>
+                            <DataGrid.Columns>
+                            <DataGridTextColumn x:Name="orderId" Binding="{Binding Path=Order_id}" Header="ID заказа" Width="Auto"/>
+                            <DataGridTextColumn x:Name="nameCustomer" Binding="{Binding Path=Name}" Header="Имя заказчика" Width="Auto"/>
+                            <DataGridTextColumn x:Name="laptopProducer" Binding="{Binding Path=Producer}" Header="Производитель" Width="Auto"/>
+                            <DataGridTextColumn x:Name="laptopModel" Binding="{Binding Path=Model}" Header="Модель ноутбука" Width="Auto"/>
+                            <DataGridTextColumn x:Name="price" Binding="{Binding Path=Price}" Header="Стоимость" Width="Auto"/>
+                            <DataGridTextColumn x:Name="orderType" Binding="{Binding Path=Service}" Header="Тип услуги" Width="Auto"/>
+                            <DataGridTextColumn x:Name="descriptionOfProblem" Binding="{Binding Path=Description}" Header="Описание проблемы" Width="*"/>
+                        </DataGrid.Columns>
+                        </DataGrid>
+
+                </TabItem.Content>
+            </TabItem>
+            <TabItem Header="Непринятые заказы" FontSize="15" FontFamily="Helvetica" MouseLeftButtonUp="TabItem_MouseLeftButtonUp_1" Background="#FF8B8484" >
+
+                <TabItem.Content>
+                    <DataGrid x:Name="notAcceptedOrders" IsReadOnly="True" AutoGenerateColumns="False" HeadersVisibility="Column" CanUserResizeColumns="False"
+        CanUserResizeRows="False" CanUserReorderColumns="False" Height="1500" VerticalScrollBarVisibility="Visible">
+                        <DataGrid.Resources>
+                            <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
+                                <Setter Property="Background" Value="#FF2C2828" />
+                                <Setter Property="Foreground" Value="White" />
+                                <Setter Property="BorderThickness" Value="1" />
+                                <Setter Property="BorderBrush" Value="Black" />
+                            </Style>
+                        </DataGrid.Resources>
+                        <DataGrid.Background>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FF767171" Offset="0"/>
+                                <GradientStop Color="#FFBD9B84" Offset="1"/>
+                            </LinearGradientBrush>
+                        </DataGrid.Background>
+
+                        <DataGrid.ContextMenu>
+                            <ContextMenu>
+                                <MenuItem x:Name="moreNotAccepted" Header="Подробнее" Click="moreNotAccepted_Click" />
+                            </ContextMenu>
+                        </DataGrid.ContextMenu>
+                        <DataGrid.Columns>
+                            <DataGridTextColumn x:Name="orderIdNotAccepted" Binding="{Binding Path=Order_id}" Header="ID заказа" Width="Auto"/>
+                            <DataGridTextColumn x:Name="nameCustomerNotAccepted" Binding="{Binding Path=Name}" Header="Имя заказчика" Width="Auto"/>
+                            <DataGridTextColumn x:Name="laptopProducerNotAccepted" Binding="{Binding Path=Producer}" Header="Производитель" Width="Auto"/>
+                            <DataGridTextColumn x:Name="laptopModelNotAccepted" Binding="{Binding Path=Model}" Header="Модель ноутбука" Width="Auto"/>
+                            <DataGridTextColumn x:Name="priceNotAccepted" Binding="{Binding Path=Price}" Header="Стоимость" Width="Auto"/>
+                            <DataGridTextColumn x:Name="orderTypeNotAccepted" Binding="{Binding Path=Service}" Header="Тип услуги" Width="Auto"/>
+                            <DataGridTextColumn x:Name="descriptionOfProblemNotAccepted" Binding="{Binding Path=Description}" Header="Описание проблемы" Width="*"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+
+                </TabItem.Content>
+            </TabItem>
+            <TabItem Header="Готовые заказы" FontFamily="Helvetica" FontSize="15" MouseLeftButtonUp="TabItem_MouseLeftButtonUp_2" Background="#FF8B8484">
+
+                <TabItem.Content>
+                    <DataGrid x:Name="readyOrders" IsReadOnly="True" AutoGenerateColumns="False" HeadersVisibility="Column" CanUserResizeColumns="False"
+        CanUserResizeRows="False" CanUserReorderColumns="False" Height="1500" VerticalScrollBarVisibility="Visible">
+                        <DataGrid.Resources>
+                            <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
+                                <Setter Property="Background" Value="#FF2C2828" />
+                                <Setter Property="Foreground" Value="White" />
+                                <Setter Property="BorderThickness" Value="1" />
+                                <Setter Property="BorderBrush" Value="Black" />
+                            </Style>
+                        </DataGrid.Resources>
+                        <DataGrid.Background>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FF767171" Offset="0"/>
+                                <GradientStop Color="#FFBD9B84" Offset="1"/>
+                            </LinearGradientBrush>
+                        </DataGrid.Background>
+
+                        <DataGrid.ContextMenu>
+                            <ContextMenu>
+                                <MenuItem x:Name="moreReady" Header="Подробнее" Click="moreReady_Click"/>
+                            </ContextMenu>
+                        </DataGrid.ContextMenu>
+                        <DataGrid.Columns>
+                            <DataGridTextColumn x:Name="orderIdReady" Binding="{Binding Path=Order_id}" Header="ID заказа" Width="Auto"/>
+                            <DataGridTextColumn x:Name="nameCustomerReady" Binding="{Binding Path=Name}" Header="Имя заказчика" Width="Auto"/>
+                            <DataGridTextColumn x:Name="laptopProducerReady" Binding="{Binding Path=Producer}" Header="Производитель" Width="Auto"/>
+                            <DataGridTextColumn x:Name="laptopModelReady" Binding="{Binding Path=Model}" Header="Модель ноутбука" Width="Auto"/>
+                            <DataGridTextColumn x:Name="priceReady" Binding="{Binding Path=Price}" Header="Стоимость" Width="Auto"/>
+                            <DataGridTextColumn x:Name="orderTypeReady" Binding="{Binding Path=Service}" Header="Тип услуги" Width="Auto"/>
+                            <DataGridTextColumn x:Name="descriptionOfProblemReady" Binding="{Binding Path=Description}" Header="Описание проблемы" Width="*"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </TabItem.Content>
+
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>

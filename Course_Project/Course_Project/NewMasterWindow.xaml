@@ -1,0 +1,121 @@
+﻿<Window x:Class="Course_Project.NewMasterWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Course_Project"
+        mc:Ignorable="d"
+       Title="Добавление мастера" Height="600" Width="500" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Window.Background>
+        <ImageBrush ImageSource="Images/back.jpg"/>
+    </Window.Background>
+    <Grid Width="450" ShowGridLines="False">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="90"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="90"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="490"/>
+            <RowDefinition Height="100"/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Column="1">
+            <Label Content="Добавление мастера"  Grid.Column="1" FontSize="25" Height="80" FontFamily="Helvetica" HorizontalAlignment="Center" Foreground="White" Padding="5,20,5,5" >
+                <Label.Effect>
+                    <DropShadowEffect
+                        ShadowDepth="2"
+                        Direction="330"
+                        Color="Black"
+                        Opacity="0.4"/>
+                </Label.Effect>
+            </Label>
+            <Label Grid.Column="1" Content="Имя" Foreground="White" FontSize="22" FontFamily="Helvetica"  Height="60" Padding="5,15,5,5" HorizontalAlignment="Center" >
+                <Label.Effect>
+                    <DropShadowEffect
+                        ShadowDepth="2"
+                        Direction="330"
+                        Color="Black"
+                        Opacity="0.4"/>
+                </Label.Effect>
+            </Label>
+            <TextBox x:Name="name" Grid.Column="1" Width="200" Height="35" FontSize="22" FontFamily="Helvetica"  LostFocus="name_LostFocus">
+                <TextBox.Effect>
+                    <DropShadowEffect
+                        ShadowDepth="2"
+                        Direction="330"
+                        Color="Black"
+                        Opacity="0.4"/>
+                </TextBox.Effect>
+            
+            <TextBox.ToolTip >
+                    <ToolTip>
+                        Введите имя с большой буквы
+                    </ToolTip>
+                </TextBox.ToolTip>
+            </TextBox>
+            <Label Grid.Column="1" Content="Фамилия" Foreground="White" FontSize="22" FontFamily="Helvetica"  Height="60" Padding="5,15,5,5" HorizontalAlignment="Center" >
+                <Label.Effect>
+                    <DropShadowEffect
+                        ShadowDepth="2"
+                        Direction="330"
+                        Color="Black"
+                        Opacity="0.4"/>
+                </Label.Effect>
+            </Label>
+            <TextBox x:Name="surname" Grid.Column="1" Width="200" Height="35" FontSize="22" FontFamily="Helvetica"  LostFocus="surname_LostFocus">
+                <TextBox.Effect>
+                    <DropShadowEffect
+                        ShadowDepth="2"
+                        Direction="330"
+                        Color="Black"
+                        Opacity="0.4"/>
+                </TextBox.Effect>
+                <TextBox.ToolTip >
+                    <ToolTip>
+                        Введите фамилию с большой буквы
+                    </ToolTip>
+                </TextBox.ToolTip>
+            </TextBox>
+            <Label Grid.Column="1" Content="Логин" FontSize="22" Foreground="White" FontFamily="Helvetica" Height="60" Padding="5,15,5,5" HorizontalAlignment="Center">
+                <Label.Effect>
+                    <DropShadowEffect
+                        ShadowDepth="2"
+                        Direction="330"
+                        Color="Black"
+                        Opacity="0.4"/>
+                </Label.Effect>
+            </Label>
+            <TextBox x:Name="login" Grid.Column="1" Width="200" Height="35"  FontSize="22" FontFamily="Helvetica" LostFocus="login_LostFocus">
+                <TextBox.Effect>
+                    <DropShadowEffect
+                        ShadowDepth="2"
+                        Direction="330"
+                        Color="Black"
+                        Opacity="0.4"/>
+                </TextBox.Effect>
+                <TextBox.ToolTip >
+                    <ToolTip>
+                        Используйте буквы латинского алфавита
+                    </ToolTip>
+                </TextBox.ToolTip>
+            </TextBox>
+            <Label Grid.Column="1" Content="Пароль" FontSize="22" Foreground="White"  Height="60" HorizontalAlignment="Center"  FontFamily="Helvetica" Padding="5,15,5,5" >
+                <Label.Effect>
+                    <DropShadowEffect
+                        ShadowDepth="2"
+                        Direction="330"
+                        Color="Black"
+                        Opacity="0.4"/>
+                </Label.Effect>
+            </Label>
+            <PasswordBox x:Name="password" Grid.Column="1" FontSize="22" Height="35" Width="200" FontFamily="Helvetica"  LostFocus="password_LostFocus">
+                <PasswordBox.ToolTip >
+                    <ToolTip>
+                        Длина пароля не меньше 6 символов
+                    </ToolTip>
+                </PasswordBox.ToolTip>
+            </PasswordBox>
+        </StackPanel>
+        <Button x:Name="loginButton" VerticalAlignment="Top" Width="160" Grid.Column="1" Grid.Row="1" Content="Зарегистрироваться" Height="35" FontFamily="Helvetica" FontSize="15"  Click="loginButton_Click" Template="{DynamicResource Registration}" Margin="55,10,55,0"/>
+    </Grid>
+</Window>
